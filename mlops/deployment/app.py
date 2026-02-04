@@ -5,6 +5,12 @@ import pandas as pd
 from huggingface_hub import hf_hub_download # Corrected import statement
 import joblib # Corrected typo
 
+# --- This is a dummy comment to force re-upload after Dockerfile fix ---
+# --- Adding another line to ensure content change detection ---
+# --- Adding yet another line for version update ---
+# --- Forcing another update to ensure commit detection ---
+# --- And one more for good measure to ensure changes are always picked up ---
+
 #Download and load the model
 model_path = hf_hub_download(repo_id="grkavi0912/Tpro", filename="best_tour_model.joblib", repo_type="model") # Added repo_type
 model = joblib.load(model_path)
@@ -25,7 +31,7 @@ Number_of_Followups= st.number_input("Number of Followups",min_value=0,max_value
 Product_Pitched= st.selectbox("Product Pitched",["Basic","Standard","Premium"])
 Preferred_Property_Star= st.number_input("Preferred Property Star",min_value=1,max_value=5)
 Marital_Status= st.selectbox("Marital Status",["Married","Divorced","Single"])
-Number_of_Trips= st.number_input("Number of Trips",min_value=1,max_value=10)
+NumberOfTrips= st.number_input("Number of Trips",min_value=1,max_value=10)
 Passport= st.selectbox("Passport",["Yes","No"])
 Pitch_Satisfaction_Score= st.number_input("Pitch Satisfaction Score",min_value=1,max_value=5)
 Own_Car= st.selectbox("Own Car",["Yes","No"])
@@ -46,7 +52,7 @@ input_data = pd.DataFrame({
     "ProductPitched": [Product_Pitched], # Corrected variable name
     "PreferredPropertyStar": [Preferred_Property_Star], # Corrected variable name
     "MaritalStatus": [Marital_Status], # Corrected variable name
-    "NumberOfTrips": [Number_of_Trips], # Corrected variable name
+    "NumberOfTrips": [NumberOfTrips], # Corrected variable name
     "Passport": [1 if Passport == "Yes" else 0], # Converted to numerical
     "PitchSatisfactionScore": [Pitch_Satisfaction_Score], # Corrected variable name
     "OwnCar": [1 if Own_Car == "Yes" else 0], # Converted to numerical
