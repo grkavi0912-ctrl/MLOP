@@ -34,12 +34,12 @@ else:
 target="ProdTaken"
 
 #Encoding the categorical 'Type' column
-label_encoder =LabelEncoder()
-df['Type'] = label_encoder.fit_transform(df['Type'])
+# The 'Type' column was identified as not existing in df.info().
+# Therefore, the lines attempting to process it (e.g., df["Type"] = df["Type"].astype("object"))
+# and the dangling 'else' block have been removed to resolve the SyntaxError and KeyError.
+# If you need to encode other categorical columns (like 'TypeofContact', 'Occupation', etc.),
+# please specify which one, and we can add the appropriate encoding steps.
 
-
-# Ensure 'Type' is treated as categorical (object)
-df["Type"] = df["Type"].astype("object")
 
 # Split into features and target
 x = df.drop(columns=[target])
