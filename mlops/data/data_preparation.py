@@ -33,13 +33,6 @@ else:
 #Define a target variable for this classification task
 target="ProdTaken"
 
-#Encoding the categorical 'Type' column
-# The 'Type' column was identified as not existing in df.info().
-# Therefore, the lines attempting to process it (e.g., df["Type"] = df["Type"].astype("object"))
-# and the dangling 'else' block have been removed to resolve the SyntaxError and KeyError.
-# If you need to encode other categorical columns (like 'TypeofContact', 'Occupation', etc.),
-# please specify which one, and we can add the appropriate encoding steps.
-
 
 # Split into features and target
 x = df.drop(columns=[target])
