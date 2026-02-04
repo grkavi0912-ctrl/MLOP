@@ -19,16 +19,16 @@ jobs:
         run: python mlops/data/data_registration.py
 
   data-prep:
-    needs: register-dataset
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v3
-      - name: Install Dependencies
-        run:  pip install -r mlops/requirements.txt
-      - name: Run Data Preparation
-        env:
-          HF_TOKEN: ${{ secrets.HFTOKEN }}
-        run: python mlops/data/data_preparation.py
+   needs: register-dataset
+runs-on: ubuntu-latest
+steps:
+  - uses: actions/checkout@v3
+  - name: Install Dependencies
+    run:  pip install -r mlops/requirements.txt
+  - name: Run Data Preparation
+    env:
+      HF_TOKEN: ${{ secrets.HFTOKEN }}
+    run: python mlops/data/data_preparation.py
 
 
 
