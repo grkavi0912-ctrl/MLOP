@@ -8,7 +8,7 @@ WORKDIR /app
 COPY . .
 
 #Install python dependencies listed in requirements.text
-RUN pip3 install -r requirements.txt
+RUN pip install -r requirements.txt
 
 RUN useradd -m -u 1000 user
 USER user
