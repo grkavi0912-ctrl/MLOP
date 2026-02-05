@@ -1,4 +1,3 @@
-!pip install mlflow==3.0.1 pyngrok==7.2.12 -q
 import pandas as pd
 import sklearn
 #for data preprocessing and pipeline creation
