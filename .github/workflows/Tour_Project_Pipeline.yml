@@ -4,7 +4,7 @@ on:
 
   push:
 
-    branches:    
+    branches:
       - main  # Automatically triggers on push to the main branch
 
 jobs:
